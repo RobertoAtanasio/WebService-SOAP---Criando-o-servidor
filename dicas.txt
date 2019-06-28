@@ -1,0 +1,14 @@
+1. na raiz da aplicação, executar: 
+
+mvnw clean install -Dskiptests 
+
+para gerar as classes referentes ao arquivo paises.xsd
+
+2. executar:
+
+curl --header "content-type: text/xml" -d @request.xml http://localhost:8080/ws
+
+saída:
+
+C:\Angular\workspace\wsdl-servidor>curl --header "content-type: text/xml" -d @request.xml http://localhost:8080/ws
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns2:getPaisResponse xmlns:ns2="http://exemplo.com/wsdlservidor/assets"><ns2:pais><ns2:nome>Brasil</ns2:nome><ns2:populacao>209300000</ns2:populacao><ns2:capital>Bras├¡lia</ns2:capital><ns2:moeda>BRL</ns2:moeda></ns2:pais></ns2:getPaisResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
